@@ -26,6 +26,24 @@ bash start_comfy.sh
   - `git`
 - If `start_comfy.sh` relies on additional system packages, install them in your container or pod startup script.
 
+## RunPod Template Image (Dockerfile)
+
+This repo includes a Dockerfile you can use to build a RunPod template image.
+
+### 1) Create a RunPod Template
+- In RunPod, choose **Create Template** → **Dockerfile**.
+- Point it at this GitHub repo and use `Dockerfile` at the repo root.
+
+### 2) Build and Launch
+- Build the template image.
+- Launch a pod from that template.
+
+### 3) Notes
+- The image clones ComfyUI into `/workspace/ComfyUI` at build time.
+- If you want to track a specific ComfyUI commit, edit the clone step in `Dockerfile`.
+- If you need a different CUDA base, update the `FROM` line in `Dockerfile`.
+
 ## Files
 - `start_comfy.sh`: Shell entrypoint for starting ComfyUI.
 - `start_comfy.py`: Python helper used by the shell script.
+- `Dockerfile`: RunPod template image definition.
