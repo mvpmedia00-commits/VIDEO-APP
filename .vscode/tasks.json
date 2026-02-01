@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start ComfyUI (Custom Script)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "/workspace/start_comfy.sh"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
